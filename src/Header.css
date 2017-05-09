@@ -1,0 +1,65 @@
+header {
+  width: 100vw;
+  height: 2000px;
+  margin: 0; }
+
+span {
+  font-size: 6rem;
+  margin: auto; }
+
+.bg-blur {
+  text-align: center;
+  height: 400px;
+  position: relative;
+  background-image: url("./images/bg-blur.jpg");
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  overflow: hidden; }
+
+.panda-img {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  bottom: -50px;
+  right: 0;
+  background-image: url(./images/panda.png);
+  background-size: contain;
+  background-position: bottom right;
+  background-repeat: no-repeat; }
+
+.rock-img {
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  bottom: -40px;
+  left: -100px;
+  background-image: url(./images/bamboo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+.portfolio-logo {
+  height: 200px;
+  width: 100%;
+  position: absolute;
+  background-image: url(./images/logo-portfolio.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: 50%;
+  margin-top: -100px; }
+
+.profile-img {
+  height: 200px;
+  width: 200px;
+  left: 100px;
+  top: 75px;
+  background: pink;
+  position: absolute;
+  background-image: url(./images/profile-img.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%; }
