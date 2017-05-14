@@ -37,7 +37,7 @@ class Header extends Component {
           </ul>
         </div>
         <section className="flex flex-space-around"> 
-          <div className="col-2">
+          <div className="col-2 align-top">
             <div className="text-center">
               <span>SKILLS</span>
             </div>
@@ -117,11 +117,12 @@ class Header extends Component {
           </div>
         </section>
         <section className="footer flex flex-space-around">
-          <div><strong>Contact</strong></div>
+          <div className="title"><strong>Contact</strong></div>
           <ul>
-            <li><a href="http://www.github.com/sarunyou">github.com/sarunyou/</a></li>
-            <li><a href="mailto:sarunyou.w@ku.th">sarunyou.w@ku.th</a></li>
-            <li><a href="http://www.facebook.com/sarunyou.whang">facebook.com/sarunyou.whang</a></li>
+            <li><i className="fa fa-github" aria-hidden="true" /><a href="http://www.github.com/sarunyou">github.com/sarunyou/</a></li>
+            <li><i className="fa fa-facebook-square" aria-hidden="true" /><a href="mailto:sarunyou.w@ku.th">sarunyou.w@ku.th</a></li>
+            <li><i className="fa fa-envelope-open-o" aria-hidden="true"></i><a href="http://www.facebook.com/sarunyou.whang">facebook.com/sarunyou.whang</a></li>
+            <li><i className="fa fa-phone" aria-hidden="true"></i><a>089-415-4308</a></li>
           </ul>
         </section>
 
