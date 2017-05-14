@@ -36,7 +36,8 @@ span {
   background-size: contain; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: white; }
 
 .flex {
   z-index: 2;
@@ -88,7 +89,9 @@ strong {
 .nav li {
   position: relative;
   float: left;
-  clear: both; }
+  clear: both;
+  color: white;
+  cursor: pointer; }
 
 .nav li:before {
   position: absolute;
@@ -141,7 +144,6 @@ i {
 .profile-img {
   height: 200px;
   width: 200px;
-  margin-right: 50px;
   position: relative;
   background-image: url(./images/profile-img.jpg);
   background-size: cover;
@@ -152,7 +154,6 @@ i {
 .footer {
   z-index: -1;
   color: white;
-  padding: 10px 20px;
   height: 150px;
   bottom: 0;
   width: 100%;

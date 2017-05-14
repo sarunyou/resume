@@ -47,6 +47,7 @@ span {
 
 a {
     text-decoration: none;
+    color: white;
 }
 
 
@@ -106,6 +107,8 @@ strong {
         position: relative;
         float: left;
         clear: both;
+        color: white;
+        cursor: pointer;
         &:before {
             position: absolute;
             transition:all 1s ease-in-out;
@@ -170,7 +173,6 @@ i {
 .profile-img {
     height: 200px;
     width: 200px;
-    margin-right: 50px;
     position: relative;
     background: {
         image: url(./images/profile-img.jpg);
@@ -185,7 +187,6 @@ i {
 .footer {
     z-index: -1;
     color: white;
-    padding: 10px 20px;
     height: 150px;
     bottom: 0;
     width: 100%;

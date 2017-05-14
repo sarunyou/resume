@@ -8,12 +8,17 @@ class Header extends Component {
       scrollTop : 0
     };
     this.handleScroll = this.handleScroll.bind(this);
+    this.scrollBottom = this.scrollBottom.bind(this);
   }
 
   componentDidMount() {
     setInterval(() => {
       window.addEventListener('scroll', this.handleScroll);
     }, 100);
+  }
+
+  scrollBottom() {
+    window.scrollTo(0, document.body.scrollHeight);
   }
 
   handleScroll(e) {
@@ -27,16 +32,28 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <div className="nav-profile-img-wrapper flex flex-center">
+        <div className="nav-profile-img-wrapper flex flex-space-around">
           <div className="profile-img" />
           <ul className="nav">
-            <li>About me</li>
-            <li>Education & Skills</li>
-            <li>Experiences</li>
-            <li>Contact</li>
+            <li><a href="#about-me">About me</a></li>
+            <li ><a href="#skills">Skills</a></li>
+            <li><a href="#experiences">Experiences</a></li>
+            <li ><a href="#education">Education</a></li>
+            <li onClick={this.scrollBottom}>Contact</li>
           </ul>
         </div>
-        <section className="flex flex-space-around"> 
+        <section id="about-me" className="flex flex-center">
+          <div className="col-1">
+            <div className="text-center">
+              <span>About me</span>
+            </div>
+            <hr/>
+            <div className="content">
+           Hi, I'm Sarunyou Whangbunyapirat, a junior web developer, a thinker and a guy who trying to be a great developer, not a just good developer. My job is to build a website which is not just attractive but also has functionality. I think UX is the most important thing in building the website. 
+            </div>
+          </div>
+        </section>
+        <section id="skills" className="flex flex-space-around"> 
           <div className="col-2 align-top">
             <div className="text-center">
               <span>SKILLS</span>
@@ -81,7 +98,7 @@ class Header extends Component {
               </li>
             </ul>
           </div>
-          <div className="col-2">
+          <div className="col-2" id="experiences">
             <div className="text-center">
               <span>Experiences</span>
             </div>
@@ -104,7 +121,7 @@ class Header extends Component {
             </div>
           </div>
         </section>
-        <section className="flex flex-center">
+        <section id="education" className="flex flex-center">
           <div className="col-1">
             <div className="text-center">
               <span>Education</span>
@@ -116,7 +133,7 @@ class Header extends Component {
             </div>
           </div>
         </section>
-        <section className="footer flex flex-space-around">
+        <section  id="contact" className="footer flex flex-space-around">
           <div className="title"><strong>Contact</strong></div>
           <ul>
             <li><i className="fa fa-github" aria-hidden="true" /><a href="http://www.github.com/sarunyou">github.com/sarunyou/</a></li>
