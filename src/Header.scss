@@ -206,7 +206,7 @@ i {
     border-radius: 50%;
     &:hover {
         border-radius: 20%;
-        transform: scale(1.5) translateX(20%);
+        transform: scale(1.5);
     }
 
 }
@@ -235,6 +235,10 @@ i {
 
     .col-1 {
         width: 400px;
+    }
+
+    .profile-img:hover {
+        transform: scale(1.1);
     }
 
 }
