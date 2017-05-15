@@ -31,17 +31,19 @@ class Header extends Component {
   }
 
   render() {
-    const profileImg = document.querySelector(".profile-img");
-    const starIcons = document.querySelectorAll(".icon-star");
-    // if (profileImg) {
-    //   profileImg.style.transform = "translateY(" + this.state.scrollTop / 3 + "px)";
-    // }
-    if (starIcons) {
+    const starIcons = document.getElementsByClassName("star-icon");
+    if (starIcons.length) {
       let index = 0,
       length = starIcons.length;
-      for (; index < length; index++) {
-        setTimeout((index)=> starIcons[index].classList.add('show'), index*400)
+      const starIcon = starIcons[index];
+      if (starIcon.getBoundingClientRect().top <  + window.innerHeight*8/10) {
+        for (let index = 0; index < length; index++) {
+            setTimeout(function(){
+              starIcons[index].classList.add('isShow')}
+              , 200*index);
+        }
       }
+      // starIcons.map(starIcon => console.log(starIcon));
     }
 
     return (
