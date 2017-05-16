@@ -36,14 +36,17 @@ class Header extends Component {
       let index = 0,
       length = starIcons.length;
       const starIcon = starIcons[index];
-      if (starIcon.getBoundingClientRect().top <  + window.innerHeight*8/10) {
+      if (starIcon.getBoundingClientRect().top < window.innerHeight*8/10) {
         for (let index = 0; index < length; index++) {
             setTimeout(function(){
               starIcons[index].classList.add('isShow')}
               , 200*index);
         }
+      } else if (starIcon.getBoundingClientRect().top > window.innerHeight) {
+        for (let index = 0; index < length; index++) {
+          starIcons[index].classList.remove('isShow');
+        }
       }
-      // starIcons.map(starIcon => console.log(starIcon));
     }
 
     return (
