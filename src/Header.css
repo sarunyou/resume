@@ -1,8 +1,10 @@
 @import url("./font/font-awesome-4.7.0/css/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
 header {
   width: 100%;
   height: auto;
   overflow: hidden;
+  font-family: 'Slabo 27px', serif;
   background: white;
   z-index: 2;
   margin-bottom: 150px; }
@@ -62,6 +64,39 @@ a {
   flex-wrap: wrap;
   align-items: center; }
 
+  svg {
+    max-width: 80%;
+    max-height: 100vh;
+    position: absolute;
+  }
+
+  .path {
+    opacity: 0;
+    fill: transparent;
+    stroke-dasharray: 700.27;
+    stroke-dashoffset: 700.27;
+    stroke: white;
+  }
+
+  @keyframes fade-out {
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  @keyframes fillColor {
+    to {
+      fill: black;
+    }
+  }
+
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
 .flex.flex-center {
   justify-content: center; }
 
@@ -75,13 +110,8 @@ a {
   overflow: hidden;
   box-sizing: border-box;
   position: relative;
+  background: lightskyblue;
   margin: 0;
-  background-image: url(./images/bg1-min.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: bottom right;
-  filter: grayscale(20%);
   height: 100vh; }
 
 .text-center {
@@ -159,20 +189,18 @@ i {
   margin: 20px 20px; }
 
 .profile-img {
-  height: 200px;
-  width: 200px;
-  position: relative;
+  opacity: 0;
+  height: 100%;
+  width: 350px;
+  position: absolute;
+  right: 0;
   transform: scale(1);
   transition: all 0.5s ease-in-out;
-  background-image: url(./images/profile-img.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 50%; }
+  }
 
-.profile-img:hover {
-  border-radius: 20%;
-  transform: scale(1.5); }
+  .svg-hro {
+    position: absolute;
+  }
 
 .footer {
   z-index: -1;
@@ -194,5 +222,4 @@ i {
     font-size: 16px; }
   .col-1 {
     width: 400px; }
-  .profile-img:hover {
-    transform: scale(1.1); } }
+    }

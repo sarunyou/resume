@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './Header.css';
+import Hero from './Hero.js';
 
 class Header extends Component {
   constructor(props) {
@@ -51,38 +52,7 @@ class Header extends Component {
 
     return (
       <header>
-        <div className="nav-profile-img-wrapper flex flex-space-around">
-          <div className="profile-img"/>
-          <ul className="nav">
-            <li>
-              <a href="#about-me">About me</a>
-            </li>
-            <li >
-              <a href="#skills">Skills</a>
-            </li>
-            <li>
-              <a href="#experiences">Experiences</a>
-            </li>
-            <li >
-              <a href="#education">Education</a>
-            </li>
-            <li onClick={this.scrollBottom}>Contact</li>
-          </ul>
-        </div>
-        <section id="about-me" className="flex flex-center">
-          <div className="col-1">
-            <div className="text-center">
-              <span>About me</span>
-            </div>
-            <hr/>
-            <div className="content">
-              Hi, I'm Sarunyou Whangbunyapirat, a junior web developer, a thinker and a guy
-              who trying to be a great developer, not a just good developer. My job is to
-              build a website which is not just attractive but also has functionality. I think
-              UX is the most important thing in building the website.
-            </div>
-          </div>
-        </section>
+        <Hero></Hero>
         <section id="skills" className="flex flex-space-around">
           <div className="col-2 align-top">
             <div className="text-center">
