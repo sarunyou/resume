@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './Header.css';
 import Hero from './Hero.js';
+import Laptop from './Laptop.js';
+import Education from './Education.js';
 
 class Header extends Component {
   constructor(props) {
@@ -53,6 +55,8 @@ class Header extends Component {
     return (
       <header>
         <Hero></Hero>
+        {/*<Laptop></Laptop>*/}
+        <Education></Education>
         <section id="skills" className="flex flex-space-around">
           <div className="col-2 align-top">
             <div className="text-center">
@@ -120,18 +124,6 @@ class Header extends Component {
               </ul>
               <strong>Attended ACM-ICPC Thailand 2016</strong>
               <strong>Attended National Software Contest Thailand 2016</strong>
-            </div>
-          </div>
-        </section>
-        <section id="education" className="flex flex-center">
-          <div className="col-1">
-            <div className="text-center">
-              <span>Education</span>
-            </div>
-            <hr/>
-            <div className="content">
-              <strong>Computer Engineering Kasetsart University, Thailand</strong>
-              Bachelor degree 2013 - Present
             </div>
           </div>
         </section>

@@ -6,6 +6,12 @@ const Title = ({className, children}) => (
   <div className={className}>{children}</div>
 )
 
+const SVG = styled.svg`
+  max-width: 80%;
+  max-height: 100vh;
+  position: absolute;
+`
+
 const HeroContent = styled(Title)`
   opacity: 0;
   color: white;
@@ -78,7 +84,7 @@ export default class Hero extends Component {
     return (
       <div className="nav-profile-img-wrapper flex flex-space-around">
         <TitleText className="title-hero">Hi</TitleText>
-        <svg
+        <SVG
           className="svg-hero"
           xmlns="http://www.w3.org/2000/svg"
           width="11.0278in"
@@ -595,7 +601,7 @@ export default class Hero extends Component {
              333.29,500.98 332.11,492.11 326.89,489.17
              323.54,487.29 312.87,487.77 309.05,488.60
              303.57,491.88 302.63,498.24 308.13,502.16 Z"/>
-        </svg>
+        </SVG>
         <HeroContent className="content-hero">
           a junior web developer, a thinker and a guy who trying
           to be a great developer, not a just good developer. My job is to build a website

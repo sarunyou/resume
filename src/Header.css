@@ -64,11 +64,11 @@ a {
   flex-wrap: wrap;
   align-items: center; }
 
-  svg {
-    max-width: 80%;
-    max-height: 100vh;
-    position: absolute;
-  }
+
+.laptop-path {
+  fill: black;
+
+}
 
   .path {
     opacity: 0;
