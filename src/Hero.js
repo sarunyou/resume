@@ -43,6 +43,10 @@ const Text = styled(Title)`
   position: absolute;
   display: inline-block;
   max-width: 400px;
+  @media (min-width: 400px) {
+    font-size: 2rem;
+
+  }
 `
 export default class Hero extends Component {
   constructor(props) {
@@ -73,11 +77,11 @@ export default class Hero extends Component {
         ease: Power1.easeIn
       })
       .to(svgWrapperEle, 0.5, {
-        top: "-10%",
+        top: "-15%",
         ease: Power1.easeIn
       })
       .to(svgText, 1, {top: '10%'})
-      .to(contentHeroEle, 1, {autoAlpha: 1});
+      .to(contentHeroEle, 1, {autoAlpha: 1}, '-=1');
   }
 
   render() {

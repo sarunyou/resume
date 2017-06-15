@@ -8,13 +8,10 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      scrollTop: 0
+      laptopWrapperEle1OffsetTop: 0
     };
     this.handleScroll = this
       .handleScroll
-      .bind(this);
-    this.scrollBottom = this
-      .scrollBottom
       .bind(this);
   }
 
@@ -24,13 +21,27 @@ class Header extends Component {
     }, 100);
   }
 
-  scrollBottom() {
-    window.scrollTo(0, document.body.scrollHeight);
-  }
 
-  handleScroll(e) {
-    const scrollTop = document.body.scrollTop
-    this.setState({scrollTop});
+  handleScroll = () => {
+    const laptopWrapperEle = document.getElementsByClassName('laptop-wrapper')[0];
+    const laptopWrapperEle1 = document.getElementsByClassName('laptop-wrapper')[1];
+    const contentLaptopWrapper = document.getElementsByClassName('content-laptop-wrapper')[0];
+    const boundTopLaptopWrapperEle = laptopWrapperEle.getBoundingClientRect().top;
+    const boundTopLaptopWrapperEle1 = laptopWrapperEle1.getBoundingClientRect().top;
+    if (boundTopLaptopWrapperEle <= 0) {
+      contentLaptopWrapper.style.position = "fixed";
+    } else {
+      contentLaptopWrapper.style.position = "static";
+    }
+
+    if (boundTopLaptopWrapperEle1 <= 0) {
+      contentLaptopWrapper.style.position = "static";
+    }
+    
+    if (boundTopLaptopWrapperEle1 <= global.window.innerHeight) {
+      const diff = global.window.innerHeight - boundTopLaptopWrapperEle1;
+      this.setState({laptopWrapperEle1OffsetTop: diff});
+    }
   }
 
   render() {
@@ -55,8 +66,8 @@ class Header extends Component {
     return (
       <header>
         <Hero></Hero>
-        {/*<Laptop></Laptop>*/}
-        <Education></Education>
+        <Laptop></Laptop>
+        <Laptop top={this.state.laptopWrapperEle1OffsetTop} background="white"></Laptop>
         <section id="skills" className="flex flex-space-around">
           <div className="col-2 align-top">
             <div className="text-center">

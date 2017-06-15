@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const EducationWrapper = styled.div `
     width: 100%;
-    height: 400px;
+    height: 200px;
     // background: pink;
     overflow: hidden;
     position: relative;
@@ -12,7 +12,7 @@ const EducationWrapper = styled.div `
 const Title = styled.div `
     position: relative;
     z-index: 2;
-    font-size: 2rem;
+    font-size: 1.2rem;
     margin: 20px 20px;
     color: white;
 `
@@ -26,7 +26,7 @@ const Background = styled.div `
 `
 
 const Text = styled.div `
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: white;
     max-width: 80%;
     position: relative;
@@ -41,8 +41,8 @@ const Hr = styled.div`
     height: 3px;
     width: 80%;
     margin: 20px 20px
-
 `
+
 export default class Education extends Component {
     constructor(props) {
         super(props);

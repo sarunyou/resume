@@ -4,45 +4,35 @@ import React, {Component} from 'react';
 const LaptopWrapper = styled.div `
 width: 100%;
 height: 100vh;
-padding: 10% 0 0;
 box-sizing: border-box;
-position: relative;
+margin: 0;
+${props => props.isOverflow ? 'overflow: hidden' : ""}
+`
+const Title = styled.div `
+    position: relative;
+    z-index: 2;
+    font-size: 1.2rem;
+    padding:20px 10px 0;
+    color: white;
 `
 
+const Skill = styled.div `
+margin: 10px 10px;
+background: orange;
+width: 250px;
+`
 const SVG = styled.svg`
-position: relative;
-margin: auto;
-// transform: translateX(30%);
-
+    height: 100%;
+    position: absolute;
 `
-
-const PATH = styled.path `
-fill: black;
-`
-
-class Laptop extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <LaptopWrapper>
-                <div>a;sdkjf;ajd;faj;dfj;lakj
-                    a;sdfj;asjdf;ajf;defaulta;sdfja;
-                    ;asjdf;akjsd;lfja;fd
-                </div>
-                <SVG
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="7.11022in"
-                    height="7.11022in"
-                    viewBox="0 0 512 512">
-                    <PATH
-                        id="Selection"
-                        fill="none"
-                        stroke="black"
-                        stroke-width="1"
-                        d="M 58.00,251.00
+const SVGElement = () => (
+                    <SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <PATH
+                            id="Selection"
+                            fill="none"
+                            stroke="black"
+                            stroke-width="1"
+                            d="M 58.00,251.00
            C 58.00,251.00 58.00,210.00 58.00,210.00
              58.00,210.00 58.00,61.00 58.00,61.00
              58.00,61.00 58.00,10.00 58.00,10.00
@@ -77,12 +67,82 @@ class Laptop extends Component {
              278.00,279.00 247.00,279.00 247.00,279.00
              241.95,279.00 233.97,278.47 229.32,279.60
              224.45,283.84 230.53,284.93 234.00,285.00 Z"/>
-                </SVG>
-            </LaptopWrapper>
+                    </SVG>
+)
 
-        );
+const PATH = styled.path `
+fill: black;
+`
+const SkillsWrapper = styled.path `
+display: flex;
+flex-flow: column wrap;
+align-items: flex-end;
+padding-top: 40px;
+box-sizing: border-box;
+`
+
+const ContentWrapper = styled.div`
+background:${props => props.background ? props.background : 'linear-gradient(to bottom, lightskyblue, pink)'} ;  
+top: 0;
+margin: 0;
+height: 100%;
+width: 100%;
+transform: translateY(calc(${props => props.top ? '-100% + ' + props.top + 'px' : '0%'}));
+`
+
+const Hr = styled.div `
+    position: relative;
+    z-index: 2;
+    background: white;
+    height: 3px;
+    width: 80%;
+    margin: 20px 20px 40px;
+`
+
+
+
+class Laptop extends Component {
+    constructor(props) {
+        super(props);
     }
 
+    componentDidMount() {
+        // window.addEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll = () => {
+        // const laptopWrapperEle = document.getElementsByClassName("laptop-wrapper")[0];
+        // const contentWrapperEl = document.getElementsByClassName("content-wrapper")[0];
+        // const boundLaptopWrapperEle = laptopWrapperEle
+        //     .getBoundingClientRect()
+        //     .top;
+        //     console.log(boundLaptopWrapperEle);
+        // if (boundLaptopWrapperEle <= 0) {
+        //     contentWrapperEl.style.position = 'fixed';
+        //     console.log(`hit ceil`);
+        // } else {
+        //     contentWrapperEl.style.position = 'static';
+        // }
+    }
+
+    render() {
+        return (
+            <LaptopWrapper className="laptop-wrapper" isOverflow={this.props.top}>
+                <ContentWrapper className="content-laptop-wrapper" top={this.props.top} background={this.props.background}>
+                    <Title>SKILLS</Title>
+                    <Hr></Hr>
+                    <SVGElement></SVGElement>
+                    <SkillsWrapper>
+                        <Skill>Hi</Skill>
+                        <Skill>Hi</Skill>
+                        <Skill>Hi</Skill>
+                        <Skill>Hi</Skill>
+                        <Skill>Hi</Skill>
+                    </SkillsWrapper>
+                </ContentWrapper>
+            </LaptopWrapper>
+        );
+    }
 }
 
 export default Laptop;
