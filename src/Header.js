@@ -48,74 +48,34 @@ class Header extends Component {
   }
 
   render() {
-    const starIcons = document.getElementsByClassName("star-icon");
-    if (starIcons.length) {
-      let index = 0,
-      length = starIcons.length;
-      const starIcon = starIcons[index];
-      if (starIcon.getBoundingClientRect().top < window.innerHeight*8/10) {
-        for (let index = 0; index < length; index++) {
-            setTimeout(function(){
-              starIcons[index].classList.add('isShow')}
-              , 200*index);
-        }
-      } else if (starIcon.getBoundingClientRect().top > window.innerHeight) {
-        for (let index = 0; index < length; index++) {
-          starIcons[index].classList.remove('isShow');
-        }
-      }
-    }
+    const dataLaptop1 = [
+      {title: 'JS', level : 4},
+      {title: 'PHP', level: 3},
+      {title: 'C#', level: 3},
+      {title: 'PYTHON', level: 4}
+    ]
+
+    const dataLaptop2 = [
+      {title: 'React', level : 4},
+      {title: 'Laravel', level: 3},
+      {title: 'NodeJS', level: 3}
+    ]
+
+    const icons1 = [];
+
+    const icons2 = [
+      {src: require('./images/react-icon.png')},
+      {src: require('./images/nodejs-logo.png')},
+      {src: require('./images/mysql-icon.png')},
+      {src: require('./images/angularjs-icon.png')}
+    ]
 
     return (
       <header>
         <Hero></Hero>
-        <Laptop></Laptop>
-        <Laptop top={this.state.laptopWrapperEle1OffsetTop} background="white"></Laptop>
+        <Laptop icons={icons1} data={dataLaptop1}></Laptop>
+        <Laptop icons={icons2} data={[]} top={this.state.laptopWrapperEle1OffsetTop} background="white"></Laptop>
         <section id="skills" className="flex flex-space-around">
-          <div className="col-2 align-top">
-            <div className="text-center">
-              <span>SKILLS</span>
-            </div>
-            <hr/>
-            <ul className="none-list-style">
-              <li>Javascript
-                <div className="right star-icon">
-                  <div className="star-icon-yellow"></div>
-                  <div className="star-icon-yellow"></div>
-                  <div className="star-icon-yellow"></div>
-                  <div className="star-icon-yellow"></div>
-                  <div className="star-icon-yellow"></div>
-                </div>
-              </li>
-              <li>PHP
-                <div className="right star-icon">
-                  <div className="star-icon-yellow"></div>
-                  <div className="star-icon-yellow"></div>
-                  <div className="star-icon-yellow"></div>
-                  <div className="star-icon-white"></div>
-                  <div className="star-icon-white"></div>
-                </div>
-              </li>
-              <li>Python
-                <div className="right star-icon">
-                  <div className="star-icon-yellow"></div>
-                  <div className="star-icon-yellow"></div>
-                  <div className="star-icon-yellow"></div>
-                  <div className="star-icon-yellow"></div>
-                  <div className="star-icon-white"></div>
-                </div>
-              </li>
-              <li>Java
-                <div className="right star-icon">
-                  <div className="star-icon-yellow"></div>
-                  <div className="star-icon-yellow"></div>
-                  <div className="star-icon-yellow"></div>
-                  <div className="star-icon-white"></div>
-                  <div className="star-icon-white"></div>
-                </div>
-              </li>
-            </ul>
-          </div>
           <div className="col-2" id="experiences">
             <div className="text-center">
               <span>Experiences</span>

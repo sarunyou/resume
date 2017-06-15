@@ -1,12 +1,15 @@
 import styled from 'styled-components';
 import React, {Component} from 'react';
+import reactIcon from './images/react-icon.png';
 
 const LaptopWrapper = styled.div `
 width: 100%;
 height: 100vh;
 box-sizing: border-box;
 margin: 0;
-${props => props.isOverflow ? 'overflow: hidden' : ""}
+${props => props.isOverflow
+    ? 'overflow: hidden'
+    : ""}
 `
 const Title = styled.div `
     position: relative;
@@ -18,21 +21,29 @@ const Title = styled.div `
 
 const Skill = styled.div `
 margin: 10px 10px;
-background: orange;
-width: 250px;
+display: flex;
+font-size: 1.25rem;
+color: ${props => props.color
+    ? 'black'
+    : 'white'};
+justify-content: space-between;
+width: 200px;
+height: 20px;
+line-height: 20px;
 `
-const SVG = styled.svg`
+const SVG = styled.svg `
     height: 100%;
     position: absolute;
 `
-const SVGElement = () => (
-                    <SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <PATH
-                            id="Selection"
-                            fill="none"
-                            stroke="black"
-                            stroke-width="1"
-                            d="M 58.00,251.00
+const SVGElement = (props) => (
+    <SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <PATH
+            color={props.color}
+            id="Selection"
+            fill="none"
+            stroke="black"
+            stroke-width="1"
+            d="M 58.00,251.00
            C 58.00,251.00 58.00,210.00 58.00,210.00
              58.00,210.00 58.00,61.00 58.00,61.00
              58.00,61.00 58.00,10.00 58.00,10.00
@@ -67,27 +78,49 @@ const SVGElement = () => (
              278.00,279.00 247.00,279.00 247.00,279.00
              241.95,279.00 233.97,278.47 229.32,279.60
              224.45,283.84 230.53,284.93 234.00,285.00 Z"/>
-                    </SVG>
+    </SVG>
 )
 
 const PATH = styled.path `
-fill: black;
+    fill: ${props => props.color
+    ? 'black'
+    : 'white'};
+    stroke: ${props => props.color
+        ? 'black'
+        : 'white'};
 `
-const SkillsWrapper = styled.path `
+const SkillsWrapper = styled.div`
 display: flex;
-flex-flow: column wrap;
-align-items: flex-end;
+width: 80%;
+height: 50%;
+float: right;
+flex-flow: row wrap;
+align-items: flex-start;
+justify-content: flex-end;
 padding-top: 40px;
 box-sizing: border-box;
 `
 
-const ContentWrapper = styled.div`
-background:${props => props.background ? props.background : 'linear-gradient(to bottom, lightskyblue, pink)'} ;  
+const IconSkill = styled.div `
+background: url(${props => props.img});
+background-size: contain;
+background-repeat: no-repeat;
+width: 100px;
+height: 100px;   
+  
+`
+
+const ContentWrapper = styled.div `
+background:${props => props.background
+    ? props.background
+    : 'linear-gradient(to bottom, lightskyblue, pink)'} ;  
 top: 0;
 margin: 0;
 height: 100%;
 width: 100%;
-transform: translateY(calc(${props => props.top ? '-100% + ' + props.top + 'px' : '0%'}));
+transform: translateY(calc(${props => props.top
+        ? '-100% + ' + props.top + 'px'
+        : '0%'}));
 `
 
 const Hr = styled.div `
@@ -99,45 +132,35 @@ const Hr = styled.div `
     margin: 20px 20px 40px;
 `
 
-
-
 class Laptop extends Component {
     constructor(props) {
         super(props);
     }
 
-    componentDidMount() {
-        // window.addEventListener('scroll', this.handleScroll);
-    }
-
-    handleScroll = () => {
-        // const laptopWrapperEle = document.getElementsByClassName("laptop-wrapper")[0];
-        // const contentWrapperEl = document.getElementsByClassName("content-wrapper")[0];
-        // const boundLaptopWrapperEle = laptopWrapperEle
-        //     .getBoundingClientRect()
-        //     .top;
-        //     console.log(boundLaptopWrapperEle);
-        // if (boundLaptopWrapperEle <= 0) {
-        //     contentWrapperEl.style.position = 'fixed';
-        //     console.log(`hit ceil`);
-        // } else {
-        //     contentWrapperEl.style.position = 'static';
-        // }
-    }
+    componentDidMount() {}
 
     render() {
         return (
             <LaptopWrapper className="laptop-wrapper" isOverflow={this.props.top}>
-                <ContentWrapper className="content-laptop-wrapper" top={this.props.top} background={this.props.background}>
+                <ContentWrapper
+                    className="content-laptop-wrapper"
+                    top={this.props.top}
+                    background={this.props.background}>
                     <Title>SKILLS</Title>
                     <Hr></Hr>
-                    <SVGElement></SVGElement>
+                    <SVGElement color={this.props.background}></SVGElement>
                     <SkillsWrapper>
-                        <Skill>Hi</Skill>
-                        <Skill>Hi</Skill>
-                        <Skill>Hi</Skill>
-                        <Skill>Hi</Skill>
-                        <Skill>Hi</Skill>
+                        {this
+                            .props
+                            .data
+                            .map(d => <Skill color={this.props.background}>
+                                <p>{d.title}</p>
+                                <p>{('\u2605 ').repeat(d.level)}</p>
+                            </Skill>)}
+                        {this
+                            .props
+                            .icons
+                                .map(icon => (<IconSkill img={icon.src}></IconSkill>))}
                     </SkillsWrapper>
                 </ContentWrapper>
             </LaptopWrapper>
