@@ -38,8 +38,11 @@ class Header extends Component {
       contentLaptopWrapper.style.position = "static";
     }
     
-    if (boundTopLaptopWrapperEle1 <= global.window.innerHeight) {
+    if (boundTopLaptopWrapperEle1 <= global.window.innerHeight && boundTopLaptopWrapperEle1 >= 0) {
+      console.log('ele1 = ' +laptopWrapperEle1.clientHeight);
+      console.log('bounde1 = ' + boundTopLaptopWrapperEle1);
       const diff = global.window.innerHeight - boundTopLaptopWrapperEle1;
+      console.log(`diff`);
       this.setState({laptopWrapperEle1OffsetTop: diff});
     }
   }
