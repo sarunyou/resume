@@ -1,3 +1,6 @@
+test:
+  override:
+    - echo "test"
 development:
   master:
     branch: master
