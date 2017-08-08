@@ -2,7 +2,7 @@ test:
   override:
     - "true"
 development:
-  master:
+  staging:
     branch: master
-    command:
+    commands:
     - if [ ! -z $CIRCLE_PULL_REQUEST ] ; then echo $CIRCLE_PULL_REQUEST; fi
