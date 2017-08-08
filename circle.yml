@@ -1,7 +1,7 @@
 test:
   override:
     - "true"
-development:
+deployment:
   staging:
     branch: master
     commands:
