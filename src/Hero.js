@@ -48,6 +48,14 @@ const Text = styled(Title)`
 
   }
 `
+
+const PATH = styled.path`
+    opacity: 0;
+    fill: transparent;
+    stroke-dasharray: 700.27;
+    stroke-dashoffset: 700.27;
+    stroke: white;
+`
 export default class Hero extends Component {
   constructor(props) {
     super(props);
@@ -94,7 +102,7 @@ export default class Hero extends Component {
           width="11.0278in"
           height="15.5972in"
           viewBox="0 0 794 1123">
-          <path
+          <PATH
             className="path"
             id="Selection"
             fill="none"
