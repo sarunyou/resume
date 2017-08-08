@@ -73,8 +73,8 @@ class Header extends Component {
     return (
       <header>
         <Hero></Hero>
-        <Laptop icons={icons1} data={dataLaptop1}></Laptop>
-        <Laptop icons={icons2} data={[]} top={this.state.laptopWrapperEle1OffsetTop} background="white"></Laptop>
+        {/*<Laptop icons={icons1} data={dataLaptop1}></Laptop>*/}
+        {/*<Laptop icons={icons2} data={[]} top={this.state.laptopWrapperEle1OffsetTop} background="white"></Laptop>*/}
         <section id="skills" className="flex flex-space-around">
           <div className="col-2" id="experiences">
             <div className="text-center">

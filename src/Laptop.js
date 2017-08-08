@@ -19,6 +19,11 @@ const Title = styled.div `
     color: white;
 `
 
+const SVGWrapper = styled.div `
+    position: relative;
+    margin: 0 auto;
+`
+
 const Skill = styled.div `
 margin: 10px 10px;
 display: flex;
@@ -32,8 +37,7 @@ height: 20px;
 line-height: 20px;
 `
 const SVG = styled.svg `
-    height: 100%;
-    position: absolute;
+    height: 100vh;
 `
 const SVGElement = (props) => (
     <SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -91,14 +95,21 @@ const PATH = styled.path `
 `
 const SkillsWrapper = styled.div`
 display: flex;
-width: 80%;
+top: 0;
+left: 0;
+position: absolute;
+padding: 2em 0;
 height: 50%;
+width: 100%;
 float: right;
 flex-flow: row wrap;
 align-items: flex-start;
-justify-content: flex-end;
-padding-top: 40px;
+justify-content: center;
 box-sizing: border-box;
+@media (max-width: 768px) {
+    flex-flow: column wrap;
+    padding-left: 7em;
+}
 `
 
 const IconSkill = styled.div `
@@ -115,6 +126,8 @@ background:${props => props.background
     ? props.background
     : 'linear-gradient(to bottom, lightskyblue, pink)'} ;  
 top: 0;
+display: flex;
+flex-direction: column;
 margin: 0;
 height: 100%;
 width: 100%;
@@ -148,20 +161,22 @@ class Laptop extends Component {
                     background={this.props.background}>
                     <Title>SKILLS</Title>
                     <Hr></Hr>
-                    <SVGElement color={this.props.background}></SVGElement>
-                    <SkillsWrapper>
-                        {this
-                            .props
-                            .data
-                            .map(d => <Skill color={this.props.background}>
-                                <p>{d.title}</p>
-                                <p>{('\u2605 ').repeat(d.level)}</p>
-                            </Skill>)}
-                        {this
-                            .props
-                            .icons
-                                .map(icon => (<IconSkill img={icon.src}></IconSkill>))}
-                    </SkillsWrapper>
+                    <SVGWrapper>
+                        <SVGElement color={this.props.background}></SVGElement>
+                        <SkillsWrapper>
+                            {this
+                                .props
+                                .data
+                                .map(d => <Skill color={this.props.background}>
+                                    <p>{d.title}</p>
+                                    <p>{('\u2605 ').repeat(d.level)}</p>
+                                </Skill>)}
+                            {this
+                                .props
+                                .icons
+                                    .map(icon => (<IconSkill img={icon.src}></IconSkill>))}
+                        </SkillsWrapper>
+                    </SVGWrapper>
                 </ContentWrapper>
             </LaptopWrapper>
         );
