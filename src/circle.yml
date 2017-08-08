@@ -1,6 +1,6 @@
 test:
   override:
-    - echo "test"
+    - "true"
 development:
   master:
     branch: master
