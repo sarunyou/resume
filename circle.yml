@@ -1,9 +1,0 @@
-test:
-  override:
-    - "true"
-deployment:
-  staging:
-    branch: master
-    commands:
-    - echo $CIRCLE_PULL_REQUEST;
-    - if [ ! -z $CIRCLE_PULL_REQUEST ] ; then echo $CIRCLE_PULL_REQUEST; fi
