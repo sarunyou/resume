@@ -17,8 +17,8 @@ class AboutMe extends Component {
         return (
             <AboutMeWrapper>
                 <div>
-                    Currently, a freelance web developer who lives in Thailand.
-Interested in investment, reading, writhing, and exercise.
+            "  Currently, a freelance web developer who lives in Thailand.
+Interested in investment, reading, writhing, and exercise.   "
                 </div>
             </AboutMeWrapper>
         )

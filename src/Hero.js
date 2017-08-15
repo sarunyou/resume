@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled, {injectGlobal, keyframes} from 'styled-components';
+import styled, { injectGlobal, keyframes} from 'styled-components';
 
 injectGlobal`
     body {
@@ -13,7 +13,7 @@ injectGlobal`
 const randomBetweenZeroTo = max => Math.random() * max ;
 const glitch = keyframes`
     0% {
-        clip: rect(89vh , 9999px, 89.5vh, 0);
+        clip: rect(89vh , 9999px, 94vh, 0);
     }
     5% {
         clip: rect( 42vh, 9999px, 40vh, 0);
@@ -22,31 +22,31 @@ const glitch = keyframes`
         clip: rect( 42vh, 9999px, 41vh, 0);
     }
     20% {
-        clip: rect( 42vh, 9999px, 43vh, 0);
+        clip: rect( 42vh, 9999px, 48vh, 0);
     }
     30% {
         clip: rect( 42vh, 9999px, 40vh, 0);
     }
     40% {
-        clip: rect( 4vh, 9999px, 5vh, 0);
+        clip: rect( 4vh, 9999px, 9vh, 0);
     }
     50% {
         clip: rect( 42vh, 9999px, 40vh, 0);
     }
     60% {
-        clip: rect( 20vh, 9999px, 21vh, 0);
+        clip: rect( 20vh, 9999px, 25vh, 0);
     }
     70% {
         clip: rect( 42vh, 9999px, 40vh, 0);
     }
     80% {
-        clip: rect( 65vh, 9999px, 66vh, 0);
+        clip: rect( 65vh, 9999px, 70vh, 0);
     }
     90% {
         clip: rect( 42vh, 9999px, 40vh, 0);
     }
     100% {
-        clip: rect( 3vh, 9999px, 3.5vh, 0);
+        clip: rect( 3vh, 9999px, 8vh, 0);
     }
 
 `
