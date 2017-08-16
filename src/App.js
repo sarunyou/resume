@@ -4,6 +4,7 @@ import Hero from './Hero.js';
 import Exeperiences from './Experiences.js';
 import Works from './Works.js';
 import AboutMe from './AboutMe.js';
+import Skills from './Skill.js';
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
         <Hero />
         <AboutMe/>
         <Exeperiences></Exeperiences>
+        <Skills></Skills>
         <Works></Works>
       </div>
     );

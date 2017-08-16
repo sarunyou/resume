@@ -7,8 +7,11 @@ const AboutMeWrapper = styled.div`
     align-items: center;
     > div {
         max-width: 400px;
-        margin: 2em 2em;
+        margin: 2em 1.5em;
         font-size: 1.5em;
+    }
+    @media (max-width: 360px) {
+        margin: 1.5em 1.5em;
     }
 
 `

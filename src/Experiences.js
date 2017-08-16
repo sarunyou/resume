@@ -6,11 +6,12 @@ const ExeWrapper = styled.div`
     display: flex;
     flex-direction: column;
     margin: 2em 2em;
-    font-size: 1em;
+    font-size: 1.1em;
 `
 
 const Title = styled.div`
     font-size: 1.5em;
+    text-transform: uppercase;
     margin-bottom: 0.5em;
 `
 
